@@ -51,11 +51,11 @@ function gettingJSON(){
         //I would print the JSON to the console
         // Your code here.
         console.log(JSON.stringify(json));
+        let text = json["weather"][0]["description"];
         location.innerHTML = json.name;
-        temp.innerHTML = json["main"].temp;
+        temp.innerHTML = json["main"].temp +' with '+ text;
         let link = "http://openweathermap.org/img/wn/" + json["weather"][0]["icon"] + ".png";
         tempImg.setAttribute("src", link);
-        let text = json["weather"][0]["description"];
         tempImg.setAttribute("alt", text);
         tempImg.setAttribute("title", "Weather Image")
         document.getElementById("forecast").style.display = "block";
