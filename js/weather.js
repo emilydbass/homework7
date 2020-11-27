@@ -1,14 +1,13 @@
 function gettingJSON(){
     //location - set to default ann arbor
     let loc;
-    if (document.querySelector("#location").value = ''){
+    if (document.querySelector("#location").value == ''){
         loc = "Ann+Arbor";
     }
     else{
         loc = document.querySelector("#location").value;
     }
-
-    
+    console.log(loc)
     
     //if not checked format is imperial, or if celcius is clicked then its metric.
     //set default temperature format if one isn't provided to farenheit
@@ -22,17 +21,16 @@ function gettingJSON(){
     }
 
     //console.log("Format is " + format);
-
+    //key
+   let key = "4f2176c09d5afd710c905e5fd7a744d0";
     //set the query  
    let query;
     // Your code here.  
     if (Number.isInteger(parseInt(loc))){
         console.log("Testing this is a number");
-        let key = "4f2176c09d5afd710c905e5fd7a744d0";
         query = "https://api.openweathermap.org/data/2.5/weather?zip=" + loc + "&APPID=" + key + "&units=" + format;
     }
     else{
-        let key = "4f2176c09d5afd710c905e5fd7a744d0";
         query = "https://api.openweathermap.org/data/2.5/weather?q=" + loc + "&APPID=" + key + "&units=" + format;
     }
     
