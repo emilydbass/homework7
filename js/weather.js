@@ -1,12 +1,11 @@
 function gettingJSON(){
-
-    //api key
-    let key = "4f2176c09d5afd710c905e5fd7a744d0";
-
     //location - set to default ann arbor
-    let loc = document.querySelector("#location").value;
-    if (loc == ""){
+    let loc;
+    if (document.querySelector("#location").value = ''){
         loc = "Ann+Arbor";
+    }
+    else{
+        loc = document.querySelector("#location").value;
     }
 
     
@@ -29,9 +28,11 @@ function gettingJSON(){
     // Your code here.  
     if (Number.isInteger(parseInt(loc))){
         console.log("Testing this is a number");
+        let key = "4f2176c09d5afd710c905e5fd7a744d0";
         query = "https://api.openweathermap.org/data/2.5/weather?zip=" + loc + "&APPID=" + key + "&units=" + format;
     }
     else{
+        let key = "4f2176c09d5afd710c905e5fd7a744d0";
         query = "https://api.openweathermap.org/data/2.5/weather?q=" + loc + "&APPID=" + key + "&units=" + format;
     }
     
